@@ -177,7 +177,6 @@
     <Compile Include="Seed\SeedData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ChallengeDB.db" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
