@@ -146,15 +146,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Application\Challenge.Application.csproj">
+    <ProjectReference Include="..\Challenge.Application\Challenge.Application.csproj">
       <Project>{E1365AF8-DEAC-4906-B463-34DA450F36FE}</Project>
       <Name>Challenge.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain\Challenge.Domain.csproj">
+    <ProjectReference Include="..\Challenge.Domain\Challenge.Domain.csproj">
       <Project>{9F1F4D42-C9A2-49FA-AAEA-9084DBF18E74}</Project>
       <Name>Challenge.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Persistence\Challenge.Persistence.csproj">
+    <ProjectReference Include="..\Challenge.Persistence\Challenge.Persistence.csproj">
       <Project>{0B54C0BD-CE80-4FFE-BCF1-04C6CDFE69B2}</Project>
       <Name>Challenge.Persistence</Name>
     </ProjectReference>

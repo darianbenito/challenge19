@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using Application.Users.Commands.AddUser;
-using Application.Users.Queries.GetAllUsers;
-using Application.Users.Queries.GetUserByIdValue;
-using Domain.Users;
+using Challenge.Application.Users.Commands.AddUser;
+using Challenge.Application.Users.Queries.GetAllUsers;
+using Challenge.Application.Users.Queries.GetUserByIdValue;
+using Challenge.Domain.Users;
 
 namespace Challenge.Api.Users
 {

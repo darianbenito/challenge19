@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Web.Http;
-using Persistence.Commons.NHibernate.Helpers;
-using Persistence.Seed;
-using Persistence.Users.NHibertante.Repositories;
+using Challenge.Persistence.Commons.NHibernate.Helpers;
+using Challenge.Persistence.Seed;
+using Challenge.Persistence.Users.NHibertante.Repositories;
 
 namespace Challenge.Api
 {

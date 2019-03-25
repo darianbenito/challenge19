@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Domain.Users;
-using Domain.Users.Extensions;
+using Challenge.Domain.Users;
+using Challenge.Domain.Users.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Challenge.Test.Tests

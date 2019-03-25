@@ -59,7 +59,7 @@
       <Project>{09A63B9D-0CC2-4475-A16B-E5AD8F7A20A9}</Project>
       <Name>Challenge.Api</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain\Challenge.Domain.csproj">
+    <ProjectReference Include="..\Challenge.Domain\Challenge.Domain.csproj">
       <Project>{9F1F4D42-C9A2-49FA-AAEA-9084DBF18E74}</Project>
       <Name>Challenge.Domain</Name>
     </ProjectReference>

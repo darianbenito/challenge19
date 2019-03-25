@@ -15,14 +15,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Test", "Challenge
 		{09A63B9D-0CC2-4475-A16B-E5AD8F7A20A9} = {09A63B9D-0CC2-4475-A16B-E5AD8F7A20A9}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Domain", "Domain\Challenge.Domain.csproj", "{9F1F4D42-C9A2-49FA-AAEA-9084DBF18E74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Domain", "Challenge.Domain\Challenge.Domain.csproj", "{9F1F4D42-C9A2-49FA-AAEA-9084DBF18E74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Persistence", "Persistence\Challenge.Persistence.csproj", "{0B54C0BD-CE80-4FFE-BCF1-04C6CDFE69B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Persistence", "Challenge.Persistence\Challenge.Persistence.csproj", "{0B54C0BD-CE80-4FFE-BCF1-04C6CDFE69B2}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9F1F4D42-C9A2-49FA-AAEA-9084DBF18E74} = {9F1F4D42-C9A2-49FA-AAEA-9084DBF18E74}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Application", "Application\Challenge.Application.csproj", "{E1365AF8-DEAC-4906-B463-34DA450F36FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Application", "Challenge.Application\Challenge.Application.csproj", "{E1365AF8-DEAC-4906-B463-34DA450F36FE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9F1F4D42-C9A2-49FA-AAEA-9084DBF18E74} = {9F1F4D42-C9A2-49FA-AAEA-9084DBF18E74}
 		{0B54C0BD-CE80-4FFE-BCF1-04C6CDFE69B2} = {0B54C0BD-CE80-4FFE-BCF1-04C6CDFE69B2}

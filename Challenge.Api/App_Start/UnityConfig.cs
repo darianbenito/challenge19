@@ -1,11 +1,11 @@
-using Application.Users.Commands.AddUser;
-using Application.Users.Queries.GetAllUsers;
-using Application.Users.Queries.GetUserByIdValue;
-using Persistence.Commons.NHibernate.Helpers;
-using Persistence.Users.Contracts;
-using Persistence.Users.NHibertante.Repositories;
 using System;
 using System.IO;
+using Challenge.Application.Users.Commands.AddUser;
+using Challenge.Application.Users.Queries.GetAllUsers;
+using Challenge.Application.Users.Queries.GetUserByIdValue;
+using Challenge.Persistence.Commons.NHibernate.Helpers;
+using Challenge.Persistence.Users.Contracts;
+using Challenge.Persistence.Users.NHibertante.Repositories;
 using Unity;
 using Unity.Injection;
 
