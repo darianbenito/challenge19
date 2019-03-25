@@ -1,6 +1,9 @@
-using Challenge.Api.Repositories.Contracts;
-using Challenge.Api.Repositories.NHibernate;
-using Challenge.Api.Repositories.NHibernate.Helpers;
+using Application.Users.Commands.AddUser;
+using Application.Users.Queries.GetAllUsers;
+using Application.Users.Queries.GetUserByIdValue;
+using Persistence.Commons.NHibernate.Helpers;
+using Persistence.Users.Contracts;
+using Persistence.Users.NHibertante.Repositories;
 using System;
 using System.IO;
 using Unity;
@@ -50,6 +53,10 @@ namespace Challenge.Api
             container.RegisterType<INHibernateHelper, NHibernateHelper>(new InjectionConstructor($@"Data Source={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ChallengeDB.db")};Version=3;Journal Mode=Off;"));
 
             container.RegisterType<IUserRepository, UserNHibernateRepository>();
+
+            container.RegisterType<IAddUserCommand, AddUserCommand>();
+            container.RegisterType<IGetAllUsersQuery, GetAllUsersQuery>();
+            container.RegisterType<IGetUserByIdValueQuery, GetUserByIdValueQuery>();
         }
     }
 }

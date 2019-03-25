@@ -59,6 +59,13 @@
       <Project>{09A63B9D-0CC2-4475-A16B-E5AD8F7A20A9}</Project>
       <Name>Challenge.Api</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{9F1F4D42-C9A2-49FA-AAEA-9084DBF18E74}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
