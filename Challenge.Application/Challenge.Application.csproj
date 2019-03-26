@@ -43,6 +43,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users\Commands\AddUser\AddUserCommand.cs" />
     <Compile Include="Users\Commands\AddUser\IAddUserCommand.cs" />
+    <Compile Include="Users\Commands\DeleteUser\DeleteUserCommand.cs" />
+    <Compile Include="Users\Commands\DeleteUser\IDeleteUserCommand.cs" />
+    <Compile Include="Users\Commands\UpdateUser\IUpdateUserCommand.cs" />
+    <Compile Include="Users\Commands\UpdateUser\UpdateUserCommand.cs" />
     <Compile Include="Users\Queries\GetAllUsers\GetAllUsersQuery.cs" />
     <Compile Include="Users\Queries\GetAllUsers\IGetAllUsersQuery.cs" />
     <Compile Include="Users\Queries\GetUserByIdValue\GetUserByIdValueQuery.cs" />

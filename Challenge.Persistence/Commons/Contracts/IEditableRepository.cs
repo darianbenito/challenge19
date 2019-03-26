@@ -11,6 +11,6 @@ namespace Challenge.Persistence.Commons.Contracts
 
         bool Update(T entity);
 
-        bool Delete(T entity);
+        bool Delete(int id);
     }
 }

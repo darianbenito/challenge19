@@ -87,7 +87,7 @@ namespace Challenge.Persistence.Commons.NHibernate.Repositories
             return true;
         }
 
-        public virtual bool Delete(T entity)
+        public virtual bool Delete(int id)
         {
             using (var session = NHibernateHelper.OpenSession())
             {
@@ -98,7 +98,7 @@ namespace Challenge.Persistence.Commons.NHibernate.Repositories
                         var queryString = $"delete {typeof(T)} where id = :id";
 
                         session.CreateQuery(queryString)
-                            .SetParameter("id", entity.Id)
+                            .SetParameter("id", id)
                             .ExecuteUpdate();
 
                         transaction.Commit();

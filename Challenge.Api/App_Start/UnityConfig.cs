@@ -1,6 +1,8 @@
 using System;
 using System.IO;
 using Challenge.Application.Users.Commands.AddUser;
+using Challenge.Application.Users.Commands.DeleteUser;
+using Challenge.Application.Users.Commands.UpdateUser;
 using Challenge.Application.Users.Queries.GetAllUsers;
 using Challenge.Application.Users.Queries.GetUserByIdValue;
 using Challenge.Persistence.Commons.NHibernate.Helpers;
@@ -43,18 +45,14 @@ namespace Challenge.Api
         /// </remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            // NOTE: To load from web.config uncomment the line below.
-            // Make sure to add a Unity.Configuration to the using statements.
-            // container.LoadConfiguration();
-
-            // TODO: Register your type's mappings here.
-            // container.RegisterType<IProductRepository, ProductRepository>();
-
             container.RegisterType<INHibernateHelper, NHibernateHelper>(new InjectionConstructor($@"Data Source={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ChallengeDB.db")};Version=3;Journal Mode=Off;"));
 
             container.RegisterType<IUserRepository, UserNHibernateRepository>();
 
             container.RegisterType<IAddUserCommand, AddUserCommand>();
+            container.RegisterType<IDeleteUserCommand, DeleteUserCommand>();
+            container.RegisterType<IUpdateUserCommand, UpdateUserCommand>();
+
             container.RegisterType<IGetAllUsersQuery, GetAllUsersQuery>();
             container.RegisterType<IGetUserByIdValueQuery, GetUserByIdValueQuery>();
         }
