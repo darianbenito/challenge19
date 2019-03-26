@@ -47,6 +47,8 @@
     <Compile Include="Users\Commands\DeleteUser\IDeleteUserCommand.cs" />
     <Compile Include="Users\Commands\UpdateUser\IUpdateUserCommand.cs" />
     <Compile Include="Users\Commands\UpdateUser\UpdateUserCommand.cs" />
+    <Compile Include="Users\Queries\GetAllUsersPaginated\GetAllUsersPaginatedQuery.cs" />
+    <Compile Include="Users\Queries\GetAllUsersPaginated\IGetAllUsersPaginatedQuery.cs" />
     <Compile Include="Users\Queries\GetAllUsers\GetAllUsersQuery.cs" />
     <Compile Include="Users\Queries\GetAllUsers\IGetAllUsersQuery.cs" />
     <Compile Include="Users\Queries\GetUserByIdValue\GetUserByIdValueQuery.cs" />

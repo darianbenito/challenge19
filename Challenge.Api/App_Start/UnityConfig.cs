@@ -4,6 +4,7 @@ using Challenge.Application.Users.Commands.AddUser;
 using Challenge.Application.Users.Commands.DeleteUser;
 using Challenge.Application.Users.Commands.UpdateUser;
 using Challenge.Application.Users.Queries.GetAllUsers;
+using Challenge.Application.Users.Queries.GetAllUsersPaginated;
 using Challenge.Application.Users.Queries.GetUserByIdValue;
 using Challenge.Persistence.Commons.NHibernate.Helpers;
 using Challenge.Persistence.Users.Contracts;
@@ -54,6 +55,7 @@ namespace Challenge.Api
             container.RegisterType<IUpdateUserCommand, UpdateUserCommand>();
 
             container.RegisterType<IGetAllUsersQuery, GetAllUsersQuery>();
+            container.RegisterType<IGetAllUsersPaginatedQuery, GetAllUsersPaginatedQuery>();
             container.RegisterType<IGetUserByIdValueQuery, GetUserByIdValueQuery>();
         }
     }

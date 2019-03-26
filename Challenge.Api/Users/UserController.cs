@@ -4,6 +4,7 @@ using Challenge.Application.Users.Commands.AddUser;
 using Challenge.Application.Users.Commands.DeleteUser;
 using Challenge.Application.Users.Commands.UpdateUser;
 using Challenge.Application.Users.Queries.GetAllUsers;
+using Challenge.Application.Users.Queries.GetAllUsersPaginated;
 using Challenge.Application.Users.Queries.GetUserByIdValue;
 using Challenge.Domain.Users;
 
@@ -16,16 +17,21 @@ namespace Challenge.Api.Users
         private readonly IUpdateUserCommand _updateUserCommand;
         private readonly IGetUserByIdValueQuery _getUserByIdValueQuery;
         private readonly IGetAllUsersQuery _getAllUsersQuery;
+        private readonly IGetAllUsersPaginatedQuery _getAllUsersPaginatedQuery;
 
-        public UserController(IAddUserCommand addUserCommand, IDeleteUserCommand deleteUserCommand,
-            IUpdateUserCommand updateUserCommand, IGetUserByIdValueQuery getUserByIdValueQuery,
-            IGetAllUsersQuery getAllUsersQuery)
+        public UserController(IAddUserCommand addUserCommand,
+            IDeleteUserCommand deleteUserCommand,
+            IUpdateUserCommand updateUserCommand,
+            IGetUserByIdValueQuery getUserByIdValueQuery,
+            IGetAllUsersQuery getAllUsersQuery,
+            IGetAllUsersPaginatedQuery getAllUsersPaginatedQuery)
         {
             _addUserCommand = addUserCommand;
             _deleteUserCommand = deleteUserCommand;
             _updateUserCommand = updateUserCommand;
             _getUserByIdValueQuery = getUserByIdValueQuery;
             _getAllUsersQuery = getAllUsersQuery;
+            _getAllUsersPaginatedQuery = getAllUsersPaginatedQuery;
         }
 
         [HttpPost]
@@ -61,6 +67,13 @@ namespace Challenge.Api.Users
         public IList<User> GetAllUsers()
         {
             return _getAllUsersQuery.Execute();
+        }
+
+        [HttpGet]
+        [Route("api/User/GetAllUsersPaginated/{pageSize}/{page}")]
+        public IList<User> GetAllUsersPaginated(int pageSize, int page)
+        {
+            return _getAllUsersPaginatedQuery.Execute(pageSize, page);
         }
     }
 }
