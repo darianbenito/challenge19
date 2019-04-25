@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Description;
 using Challenge.Application.Users.Commands.AddUser;
 using Challenge.Application.Users.Commands.DeleteUser;
 using Challenge.Application.Users.Commands.UpdateUser;
@@ -10,7 +11,7 @@ using Challenge.Domain.Users;
 
 namespace Challenge.Api.Users
 {
-    public class UserController : ApiController
+    public class UsersController : ApiController
     {
         private readonly IAddUserCommand _addUserCommand;
         private readonly IDeleteUserCommand _deleteUserCommand;
@@ -19,7 +20,7 @@ namespace Challenge.Api.Users
         private readonly IGetAllUsersQuery _getAllUsersQuery;
         private readonly IGetAllUsersPaginatedQuery _getAllUsersPaginatedQuery;
 
-        public UserController(IAddUserCommand addUserCommand,
+        public UsersController(IAddUserCommand addUserCommand,
             IDeleteUserCommand deleteUserCommand,
             IUpdateUserCommand updateUserCommand,
             IGetUserByIdValueQuery getUserByIdValueQuery,
@@ -35,45 +36,75 @@ namespace Challenge.Api.Users
         }
 
         [HttpPost]
-        [Route("api/User/AddUser")]
-        public void AddUser(User user)
+        [Route("api/Users")]
+        public IHttpActionResult AddUser(User user)
         {
             _addUserCommand.Execute(user);
+
+            return Ok();
         }
 
         [HttpDelete]
-        [Route("api/User/DeleteUser/{id}")]
-        public void DeleteUser(int id)
+        [Route("api/Users/{id:int}")]
+        public IHttpActionResult DeleteUser(int id)
         {
             _deleteUserCommand.Execute(id);
+
+            return Ok();
         }
 
         [HttpPut]
-        [Route("api/User/UpdateUser")]
-        public void UpdateUser(User user)
+        [Route("api/Users")]
+        public IHttpActionResult UpdateUser(User user)
         {
             _updateUserCommand.Execute(user);
+
+            return Ok();
         }
 
         [HttpGet]
-        [Route("api/User/GetByIdValue/{idValue}")]
-        public User GetByIdValue(string idValue)
+        [Route("api/Users")]
+        [ResponseType(typeof(User))]
+        public IHttpActionResult GetByIdValue(string idValue)
         {
-            return _getUserByIdValueQuery.Execute(idValue);
+            User user = _getUserByIdValueQuery.Execute(idValue);
+
+            if (user == default(User))
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
         }
 
         [HttpGet]
-        [Route("api/User/GetAllUsers")]
-        public IList<User> GetAllUsers()
+        [Route("api/Users")]
+        [ResponseType(typeof(IList<User>))]
+        public IHttpActionResult GetAllUsers()
         {
-            return _getAllUsersQuery.Execute();
+            IList<User> users = _getAllUsersQuery.Execute();
+
+            if (users == default(IList<User>))
+            {
+                return NotFound();
+            }
+
+            return Ok(users);
         }
 
         [HttpGet]
-        [Route("api/User/GetAllUsersPaginated/{pageSize}/{page}")]
-        public IList<User> GetAllUsersPaginated(int pageSize, int page)
+        [Route("api/Users")]
+        [ResponseType(typeof(IList<User>))]
+        public IHttpActionResult GetAllUsersPaginated(int pageSize, int page)
         {
-            return _getAllUsersPaginatedQuery.Execute(pageSize, page);
+            IList<User> users = _getAllUsersPaginatedQuery.Execute(pageSize, page);
+
+            if (users == default(IList<User>))
+            {
+                return NotFound();
+            }
+
+            return Ok(users);
         }
     }
 }
