@@ -34,7 +34,10 @@ namespace Challenge.Persistence.Users.NHibertante.Repositories
 
         public override IList<User> GetAll()
         {
-            return base.GetAll().SetTheOldest();
+            var allUsers = base.GetAll();
+            allUsers.SetTheOldest();
+
+            return allUsers;
         }
 
         public override IList<User> GetAllPaginated(int pageSize, int page)

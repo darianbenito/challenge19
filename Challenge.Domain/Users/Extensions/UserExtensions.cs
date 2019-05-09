@@ -6,7 +6,7 @@ namespace Challenge.Domain.Users.Extensions
 {
     public static class UserExtensions
     {
-        public static IList<User> SetTheOldest(this IList<User> users)
+        public static void SetTheOldest(this IList<User> users)
         {
             if (users == null) throw new ArgumentNullException(nameof(users));
             if (users.Count == 0) throw new ArgumentException("Value cannot be an empty collection.", nameof(users));
@@ -24,8 +24,6 @@ namespace Challenge.Domain.Users.Extensions
             }
 
             theOldestUser.IsTheOldest = true;
-
-            return users;
         }
     }
 }
